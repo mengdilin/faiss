@@ -11,13 +11,15 @@ env:
   OMP_NUM_THREADS: '10'
   MKL_THREADING_LAYER: GNU
 jobs:
-  linux-arm64-SVE-cmake:
-    name: Linux arm64 SVE (cmake)
-    runs-on: faiss-aws-r8g.large
-    continue-on-error: true # non-blocking mode for now
+  windows-x86_64-conda:
+    name: Windows x86_64 (conda)
+    runs-on: windows-2019
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - uses: ./.github/actions/build_cmake
         with:
-          opt_level: sve
+          fetch-depth: 0
+          fetch-tags: true
+      - name: Setup tmate session 
+        uses: mxschmitt/action-tmate@v3
+      - uses: ./.github/actions/build_conda
