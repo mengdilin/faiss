@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="structfaiss_1_1cppcontrib_1_1IndexPQDecoder" kind="struct" language="C++" prot="public">
     <compoundname>faiss::cppcontrib::IndexPQDecoder</compoundname>
     <includes refid="PQ-inl_8h" local="no">PQ-inl.h</includes>
@@ -21,12 +21,13 @@
         <defval>8</defval>
       </param>
     </templateparamlist>
-      <sectiondef kind="public-static-attrib">
+    <sectiondef kind="public-static-attrib">
       <memberdef kind="variable" id="structfaiss_1_1cppcontrib_1_1IndexPQDecoder_1a8c0c9c90a433402a270b3c69cbb03679" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>constexpr intptr_t</type>
         <definition>static constexpr intptr_t faiss::cppcontrib::IndexPQDecoder&lt; DIM, FINE_SIZE, FINE_BITS &gt;::dim</definition>
         <argsstring></argsstring>
         <name>dim</name>
+        <qualifiedname>faiss::cppcontrib::IndexPQDecoder::dim</qualifiedname>
         <initializer>= DIM</initializer>
         <briefdescription>
         </briefdescription>
@@ -41,6 +42,7 @@
         <definition>static constexpr intptr_t faiss::cppcontrib::IndexPQDecoder&lt; DIM, FINE_SIZE, FINE_BITS &gt;::fineSize</definition>
         <argsstring></argsstring>
         <name>fineSize</name>
+        <qualifiedname>faiss::cppcontrib::IndexPQDecoder::fineSize</qualifiedname>
         <initializer>= FINE_SIZE</initializer>
         <briefdescription>
         </briefdescription>
@@ -55,6 +57,7 @@
         <definition>static constexpr intptr_t faiss::cppcontrib::IndexPQDecoder&lt; DIM, FINE_SIZE, FINE_BITS &gt;::fineBits</definition>
         <argsstring></argsstring>
         <name>fineBits</name>
+        <qualifiedname>faiss::cppcontrib::IndexPQDecoder::fineBits</qualifiedname>
         <initializer>= FINE_BITS</initializer>
         <briefdescription>
         </briefdescription>
@@ -69,6 +72,7 @@
         <definition>constexpr intptr_t faiss::cppcontrib::IndexPQDecoder&lt; DIM, FINE_SIZE, FINE_BITS &gt;::FINE_TABLE_BYTES</definition>
         <argsstring></argsstring>
         <name>FINE_TABLE_BYTES</name>
+        <qualifiedname>faiss::cppcontrib::IndexPQDecoder::FINE_TABLE_BYTES</qualifiedname>
         <initializer>= (1 &lt;&lt; FINE_BITS)</initializer>
         <briefdescription>
         </briefdescription>
@@ -76,15 +80,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="faiss/cppcontrib/sa_decode/PQ-inl.h" line="32" column="31" bodyfile="faiss/cppcontrib/sa_decode/PQ-inl.h" bodystart="32" bodyend="-1"/>
+        <location file="faiss/cppcontrib/sa_decode/PQ-inl.h" line="38" column="31" bodyfile="faiss/cppcontrib/sa_decode/PQ-inl.h" bodystart="38" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-static-func">
+    </sectiondef>
+    <sectiondef kind="public-static-func">
       <memberdef kind="function" id="structfaiss_1_1cppcontrib_1_1IndexPQDecoder_1a6eb92d7c2c495a099887f88358670dfe" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>static void faiss::cppcontrib::IndexPQDecoder&lt; DIM, FINE_SIZE, FINE_BITS &gt;::store</definition>
         <argsstring>(const float *const __restrict pqFineCentroids, const uint8_t *const __restrict code, float *const __restrict outputStore)</argsstring>
         <name>store</name>
+        <qualifiedname>faiss::cppcontrib::IndexPQDecoder::store</qualifiedname>
         <param>
           <type>const float *const __restrict</type>
           <declname>pqFineCentroids</declname>
@@ -110,6 +115,7 @@
         <definition>static void faiss::cppcontrib::IndexPQDecoder&lt; DIM, FINE_SIZE, FINE_BITS &gt;::accum</definition>
         <argsstring>(const float *const __restrict pqFineCentroids, const uint8_t *const __restrict code, const float weight, float *const __restrict outputAccum)</argsstring>
         <name>accum</name>
+        <qualifiedname>faiss::cppcontrib::IndexPQDecoder::accum</qualifiedname>
         <param>
           <type>const float *const __restrict</type>
           <declname>pqFineCentroids</declname>
@@ -139,6 +145,7 @@
         <definition>static void faiss::cppcontrib::IndexPQDecoder&lt; DIM, FINE_SIZE, FINE_BITS &gt;::accum</definition>
         <argsstring>(const float *const __restrict pqFineCentroids0, const uint8_t *const __restrict code0, const float weight0, const float *const __restrict pqFineCentroids1, const uint8_t *const __restrict code1, const float weight1, float *const __restrict outputAccum)</argsstring>
         <name>accum</name>
+        <qualifiedname>faiss::cppcontrib::IndexPQDecoder::accum</qualifiedname>
         <param>
           <type>const float *const __restrict</type>
           <declname>pqFineCentroids0</declname>
@@ -180,6 +187,7 @@
         <definition>static void faiss::cppcontrib::IndexPQDecoder&lt; DIM, FINE_SIZE, FINE_BITS &gt;::accum</definition>
         <argsstring>(const float *const __restrict pqFineCentroids, const uint8_t *const __restrict code0, const float weight0, const uint8_t *const __restrict code1, const float weight1, float *const __restrict outputAccum)</argsstring>
         <name>accum</name>
+        <qualifiedname>faiss::cppcontrib::IndexPQDecoder::accum</qualifiedname>
         <param>
           <type>const float *const __restrict</type>
           <declname>pqFineCentroids</declname>
@@ -217,6 +225,7 @@
         <definition>static void faiss::cppcontrib::IndexPQDecoder&lt; DIM, FINE_SIZE, FINE_BITS &gt;::accum</definition>
         <argsstring>(const float *const __restrict pqFineCentroids0, const uint8_t *const __restrict code0, const float weight0, const float *const __restrict pqFineCentroids1, const uint8_t *const __restrict code1, const float weight1, const float *const __restrict pqFineCentroids2, const uint8_t *const __restrict code2, const float weight2, float *const __restrict outputAccum)</argsstring>
         <name>accum</name>
+        <qualifiedname>faiss::cppcontrib::IndexPQDecoder::accum</qualifiedname>
         <param>
           <type>const float *const __restrict</type>
           <declname>pqFineCentroids0</declname>
@@ -270,6 +279,7 @@
         <definition>static void faiss::cppcontrib::IndexPQDecoder&lt; DIM, FINE_SIZE, FINE_BITS &gt;::accum</definition>
         <argsstring>(const float *const __restrict pqFineCentroids, const uint8_t *const __restrict code0, const float weight0, const uint8_t *const __restrict code1, const float weight1, const uint8_t *const __restrict code2, const float weight2, float *const __restrict outputAccum)</argsstring>
         <name>accum</name>
+        <qualifiedname>faiss::cppcontrib::IndexPQDecoder::accum</qualifiedname>
         <param>
           <type>const float *const __restrict</type>
           <declname>pqFineCentroids</declname>
@@ -315,6 +325,7 @@
         <definition>static void faiss::cppcontrib::IndexPQDecoder&lt; DIM, FINE_SIZE, FINE_BITS &gt;::store</definition>
         <argsstring>(const float *const __restrict pqFineCentroids, const uint8_t *const __restrict code, float *const __restrict outputStore)</argsstring>
         <name>store</name>
+        <qualifiedname>faiss::cppcontrib::IndexPQDecoder::store</qualifiedname>
         <param>
           <type>const float *const __restrict</type>
           <declname>pqFineCentroids</declname>
@@ -333,13 +344,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="faiss/cppcontrib/sa_decode/PQ-inl.h" line="36" column="17" bodyfile="faiss/cppcontrib/sa_decode/PQ-inl.h" bodystart="36" bodyend="57"/>
+        <location file="faiss/cppcontrib/sa_decode/PQ-inl.h" line="42" column="17" bodyfile="faiss/cppcontrib/sa_decode/PQ-inl.h" bodystart="42" bodyend="63"/>
       </memberdef>
       <memberdef kind="function" id="structfaiss_1_1cppcontrib_1_1IndexPQDecoder_1a773f12d72ab8a6957ab3ea745abd13c4" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>static void faiss::cppcontrib::IndexPQDecoder&lt; DIM, FINE_SIZE, FINE_BITS &gt;::accum</definition>
         <argsstring>(const float *const __restrict pqFineCentroids, const uint8_t *const __restrict code, const float weight, float *const __restrict outputAccum)</argsstring>
         <name>accum</name>
+        <qualifiedname>faiss::cppcontrib::IndexPQDecoder::accum</qualifiedname>
         <param>
           <type>const float *const __restrict</type>
           <declname>pqFineCentroids</declname>
@@ -362,13 +374,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="faiss/cppcontrib/sa_decode/PQ-inl.h" line="61" column="17" bodyfile="faiss/cppcontrib/sa_decode/PQ-inl.h" bodystart="61" bodyend="83"/>
+        <location file="faiss/cppcontrib/sa_decode/PQ-inl.h" line="67" column="17" bodyfile="faiss/cppcontrib/sa_decode/PQ-inl.h" bodystart="67" bodyend="89"/>
       </memberdef>
       <memberdef kind="function" id="structfaiss_1_1cppcontrib_1_1IndexPQDecoder_1ab442dec47b6199f29e0e7d751255b99c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>static void faiss::cppcontrib::IndexPQDecoder&lt; DIM, FINE_SIZE, FINE_BITS &gt;::accum</definition>
         <argsstring>(const float *const __restrict pqFineCentroids0, const uint8_t *const __restrict code0, const float weight0, const float *const __restrict pqFineCentroids1, const uint8_t *const __restrict code1, const float weight1, float *const __restrict outputAccum)</argsstring>
         <name>accum</name>
+        <qualifiedname>faiss::cppcontrib::IndexPQDecoder::accum</qualifiedname>
         <param>
           <type>const float *const __restrict</type>
           <declname>pqFineCentroids0</declname>
@@ -403,13 +416,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="faiss/cppcontrib/sa_decode/PQ-inl.h" line="90" column="17" bodyfile="faiss/cppcontrib/sa_decode/PQ-inl.h" bodystart="90" bodyend="121"/>
+        <location file="faiss/cppcontrib/sa_decode/PQ-inl.h" line="96" column="17" bodyfile="faiss/cppcontrib/sa_decode/PQ-inl.h" bodystart="96" bodyend="127"/>
       </memberdef>
       <memberdef kind="function" id="structfaiss_1_1cppcontrib_1_1IndexPQDecoder_1aae9a30d80cab1751204b76dbbd77ed18" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>static void faiss::cppcontrib::IndexPQDecoder&lt; DIM, FINE_SIZE, FINE_BITS &gt;::accum</definition>
         <argsstring>(const float *const __restrict pqFineCentroids, const uint8_t *const __restrict code0, const float weight0, const uint8_t *const __restrict code1, const float weight1, float *const __restrict outputAccum)</argsstring>
         <name>accum</name>
+        <qualifiedname>faiss::cppcontrib::IndexPQDecoder::accum</qualifiedname>
         <param>
           <type>const float *const __restrict</type>
           <declname>pqFineCentroids</declname>
@@ -440,13 +454,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="faiss/cppcontrib/sa_decode/PQ-inl.h" line="128" column="17" bodyfile="faiss/cppcontrib/sa_decode/PQ-inl.h" bodystart="128" bodyend="158"/>
+        <location file="faiss/cppcontrib/sa_decode/PQ-inl.h" line="134" column="17" bodyfile="faiss/cppcontrib/sa_decode/PQ-inl.h" bodystart="134" bodyend="164"/>
       </memberdef>
       <memberdef kind="function" id="structfaiss_1_1cppcontrib_1_1IndexPQDecoder_1ab5aaa1fb47b362d1024acdc7eeb0c3dc" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>static void faiss::cppcontrib::IndexPQDecoder&lt; DIM, FINE_SIZE, FINE_BITS &gt;::accum</definition>
         <argsstring>(const float *const __restrict pqFineCentroids0, const uint8_t *const __restrict code0, const float weight0, const float *const __restrict pqFineCentroids1, const uint8_t *const __restrict code1, const float weight1, const float *const __restrict pqFineCentroids2, const uint8_t *const __restrict code2, const float weight2, float *const __restrict outputAccum)</argsstring>
         <name>accum</name>
+        <qualifiedname>faiss::cppcontrib::IndexPQDecoder::accum</qualifiedname>
         <param>
           <type>const float *const __restrict</type>
           <declname>pqFineCentroids0</declname>
@@ -493,13 +508,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="faiss/cppcontrib/sa_decode/PQ-inl.h" line="165" column="17" bodyfile="faiss/cppcontrib/sa_decode/PQ-inl.h" bodystart="165" bodyend="206"/>
+        <location file="faiss/cppcontrib/sa_decode/PQ-inl.h" line="171" column="17" bodyfile="faiss/cppcontrib/sa_decode/PQ-inl.h" bodystart="171" bodyend="212"/>
       </memberdef>
       <memberdef kind="function" id="structfaiss_1_1cppcontrib_1_1IndexPQDecoder_1a1a40a4bd16fdb8cb3dea81e330e7f76a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>static void faiss::cppcontrib::IndexPQDecoder&lt; DIM, FINE_SIZE, FINE_BITS &gt;::accum</definition>
         <argsstring>(const float *const __restrict pqFineCentroids, const uint8_t *const __restrict code0, const float weight0, const uint8_t *const __restrict code1, const float weight1, const uint8_t *const __restrict code2, const float weight2, float *const __restrict outputAccum)</argsstring>
         <name>accum</name>
+        <qualifiedname>faiss::cppcontrib::IndexPQDecoder::accum</qualifiedname>
         <param>
           <type>const float *const __restrict</type>
           <declname>pqFineCentroids</declname>
@@ -538,13 +554,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="faiss/cppcontrib/sa_decode/PQ-inl.h" line="213" column="17" bodyfile="faiss/cppcontrib/sa_decode/PQ-inl.h" bodystart="213" bodyend="252"/>
+        <location file="faiss/cppcontrib/sa_decode/PQ-inl.h" line="219" column="17" bodyfile="faiss/cppcontrib/sa_decode/PQ-inl.h" bodystart="219" bodyend="258"/>
       </memberdef>
       <memberdef kind="function" id="structfaiss_1_1cppcontrib_1_1IndexPQDecoder_1a6eb92d7c2c495a099887f88358670dfe" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>static void faiss::cppcontrib::IndexPQDecoder&lt; DIM, FINE_SIZE, FINE_BITS &gt;::store</definition>
         <argsstring>(const float *const __restrict pqFineCentroids, const uint8_t *const __restrict code, float *const __restrict outputStore)</argsstring>
         <name>store</name>
+        <qualifiedname>faiss::cppcontrib::IndexPQDecoder::store</qualifiedname>
         <param>
           <type>const float *const __restrict</type>
           <declname>pqFineCentroids</declname>
@@ -563,13 +580,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="faiss/cppcontrib/sa_decode/PQ-neon-inl.h" line="1345" column="17" bodyfile="faiss/cppcontrib/sa_decode/PQ-neon-inl.h" bodystart="1345" bodyend="1351"/>
+        <location file="faiss/cppcontrib/sa_decode/PQ-neon-inl.h" line="2037" column="17" bodyfile="faiss/cppcontrib/sa_decode/PQ-neon-inl.h" bodystart="2037" bodyend="2043"/>
       </memberdef>
       <memberdef kind="function" id="structfaiss_1_1cppcontrib_1_1IndexPQDecoder_1a773f12d72ab8a6957ab3ea745abd13c4" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>static void faiss::cppcontrib::IndexPQDecoder&lt; DIM, FINE_SIZE, FINE_BITS &gt;::accum</definition>
         <argsstring>(const float *const __restrict pqFineCentroids, const uint8_t *const __restrict code, const float weight, float *const __restrict outputAccum)</argsstring>
         <name>accum</name>
+        <qualifiedname>faiss::cppcontrib::IndexPQDecoder::accum</qualifiedname>
         <param>
           <type>const float *const __restrict</type>
           <declname>pqFineCentroids</declname>
@@ -592,13 +610,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="faiss/cppcontrib/sa_decode/PQ-neon-inl.h" line="1355" column="17" bodyfile="faiss/cppcontrib/sa_decode/PQ-neon-inl.h" bodystart="1355" bodyend="1362"/>
+        <location file="faiss/cppcontrib/sa_decode/PQ-neon-inl.h" line="2047" column="17" bodyfile="faiss/cppcontrib/sa_decode/PQ-neon-inl.h" bodystart="2047" bodyend="2054"/>
       </memberdef>
       <memberdef kind="function" id="structfaiss_1_1cppcontrib_1_1IndexPQDecoder_1ab442dec47b6199f29e0e7d751255b99c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>static void faiss::cppcontrib::IndexPQDecoder&lt; DIM, FINE_SIZE, FINE_BITS &gt;::accum</definition>
         <argsstring>(const float *const __restrict pqFineCentroids0, const uint8_t *const __restrict code0, const float weight0, const float *const __restrict pqFineCentroids1, const uint8_t *const __restrict code1, const float weight1, float *const __restrict outputAccum)</argsstring>
         <name>accum</name>
+        <qualifiedname>faiss::cppcontrib::IndexPQDecoder::accum</qualifiedname>
         <param>
           <type>const float *const __restrict</type>
           <declname>pqFineCentroids0</declname>
@@ -633,13 +652,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="faiss/cppcontrib/sa_decode/PQ-neon-inl.h" line="1369" column="17" bodyfile="faiss/cppcontrib/sa_decode/PQ-neon-inl.h" bodystart="1369" bodyend="1385"/>
+        <location file="faiss/cppcontrib/sa_decode/PQ-neon-inl.h" line="2061" column="17" bodyfile="faiss/cppcontrib/sa_decode/PQ-neon-inl.h" bodystart="2061" bodyend="2077"/>
       </memberdef>
       <memberdef kind="function" id="structfaiss_1_1cppcontrib_1_1IndexPQDecoder_1aae9a30d80cab1751204b76dbbd77ed18" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>static void faiss::cppcontrib::IndexPQDecoder&lt; DIM, FINE_SIZE, FINE_BITS &gt;::accum</definition>
         <argsstring>(const float *const __restrict pqFineCentroids, const uint8_t *const __restrict code0, const float weight0, const uint8_t *const __restrict code1, const float weight1, float *const __restrict outputAccum)</argsstring>
         <name>accum</name>
+        <qualifiedname>faiss::cppcontrib::IndexPQDecoder::accum</qualifiedname>
         <param>
           <type>const float *const __restrict</type>
           <declname>pqFineCentroids</declname>
@@ -670,13 +690,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="faiss/cppcontrib/sa_decode/PQ-neon-inl.h" line="1392" column="17" bodyfile="faiss/cppcontrib/sa_decode/PQ-neon-inl.h" bodystart="1392" bodyend="1401"/>
+        <location file="faiss/cppcontrib/sa_decode/PQ-neon-inl.h" line="2084" column="17" bodyfile="faiss/cppcontrib/sa_decode/PQ-neon-inl.h" bodystart="2084" bodyend="2093"/>
       </memberdef>
       <memberdef kind="function" id="structfaiss_1_1cppcontrib_1_1IndexPQDecoder_1ab5aaa1fb47b362d1024acdc7eeb0c3dc" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>static void faiss::cppcontrib::IndexPQDecoder&lt; DIM, FINE_SIZE, FINE_BITS &gt;::accum</definition>
         <argsstring>(const float *const __restrict pqFineCentroids0, const uint8_t *const __restrict code0, const float weight0, const float *const __restrict pqFineCentroids1, const uint8_t *const __restrict code1, const float weight1, const float *const __restrict pqFineCentroids2, const uint8_t *const __restrict code2, const float weight2, float *const __restrict outputAccum)</argsstring>
         <name>accum</name>
+        <qualifiedname>faiss::cppcontrib::IndexPQDecoder::accum</qualifiedname>
         <param>
           <type>const float *const __restrict</type>
           <declname>pqFineCentroids0</declname>
@@ -723,13 +744,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="faiss/cppcontrib/sa_decode/PQ-neon-inl.h" line="1408" column="17" bodyfile="faiss/cppcontrib/sa_decode/PQ-neon-inl.h" bodystart="1408" bodyend="1430"/>
+        <location file="faiss/cppcontrib/sa_decode/PQ-neon-inl.h" line="2100" column="17" bodyfile="faiss/cppcontrib/sa_decode/PQ-neon-inl.h" bodystart="2100" bodyend="2122"/>
       </memberdef>
       <memberdef kind="function" id="structfaiss_1_1cppcontrib_1_1IndexPQDecoder_1a1a40a4bd16fdb8cb3dea81e330e7f76a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>static void faiss::cppcontrib::IndexPQDecoder&lt; DIM, FINE_SIZE, FINE_BITS &gt;::accum</definition>
         <argsstring>(const float *const __restrict pqFineCentroids, const uint8_t *const __restrict code0, const float weight0, const uint8_t *const __restrict code1, const float weight1, const uint8_t *const __restrict code2, const float weight2, float *const __restrict outputAccum)</argsstring>
         <name>accum</name>
+        <qualifiedname>faiss::cppcontrib::IndexPQDecoder::accum</qualifiedname>
         <param>
           <type>const float *const __restrict</type>
           <declname>pqFineCentroids</declname>
@@ -768,9 +790,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="faiss/cppcontrib/sa_decode/PQ-neon-inl.h" line="1437" column="17" bodyfile="faiss/cppcontrib/sa_decode/PQ-neon-inl.h" bodystart="1437" bodyend="1455"/>
+        <location file="faiss/cppcontrib/sa_decode/PQ-neon-inl.h" line="2129" column="17" bodyfile="faiss/cppcontrib/sa_decode/PQ-neon-inl.h" bodystart="2129" bodyend="2147"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
 <para><ref refid="structfaiss_1_1cppcontrib_1_1IndexPQDecoder" kindref="compound">IndexPQDecoder</ref>. </para>
     </briefdescription>

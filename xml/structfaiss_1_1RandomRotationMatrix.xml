@@ -1,22 +1,23 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="structfaiss_1_1RandomRotationMatrix" kind="struct" language="C++" prot="public">
     <compoundname>faiss::RandomRotationMatrix</compoundname>
     <basecompoundref refid="structfaiss_1_1LinearTransform" prot="public" virt="non-virtual">faiss::LinearTransform</basecompoundref>
     <includes refid="VectorTransform_8h" local="no">VectorTransform.h</includes>
-      <sectiondef kind="public-func">
-      <memberdef kind="function" id="structfaiss_1_1RandomRotationMatrix_1a64e406c8f73c7692bcf7d97b27305fc6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structfaiss_1_1RandomRotationMatrix_1a8efd0ee4dda65839747a67f723e6a567" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>faiss::RandomRotationMatrix::RandomRotationMatrix</definition>
-        <argsstring>(int d_in, int d_out)</argsstring>
+        <argsstring>(int d_in_val, int d_out_val)</argsstring>
         <name>RandomRotationMatrix</name>
+        <qualifiedname>faiss::RandomRotationMatrix::RandomRotationMatrix</qualifiedname>
         <param>
           <type>int</type>
-          <declname>d_in</declname>
+          <declname>d_in_val</declname>
         </param>
         <param>
           <type>int</type>
-          <declname>d_out</declname>
+          <declname>d_out_val</declname>
         </param>
         <briefdescription>
 <para>both d_in &gt; d_out and d_out &lt; d_in are supported </para>
@@ -32,6 +33,7 @@
         <definition>void faiss::RandomRotationMatrix::init</definition>
         <argsstring>(int seed)</argsstring>
         <name>init</name>
+        <qualifiedname>faiss::RandomRotationMatrix::init</qualifiedname>
         <param>
           <type>int</type>
           <declname>seed</declname>
@@ -50,9 +52,10 @@
         <definition>void faiss::RandomRotationMatrix::train</definition>
         <argsstring>(idx_t n, const float *x) override</argsstring>
         <name>train</name>
+        <qualifiedname>faiss::RandomRotationMatrix::train</qualifiedname>
         <reimplements refid="structfaiss_1_1VectorTransform_1ab781e04a6c8afe04689b3fc64be512d5">train</reimplements>
         <param>
-          <type><ref refid="namespacefaiss_1ad63e84aa82f5bb0405ed924d58b20e2e" kindref="member">idx_t</ref></type>
+          <type><ref refid="namespacefaiss_1ad95f6ecce1dcddede15df19a5b17adf6" kindref="member">idx_t</ref></type>
           <declname>n</declname>
         </param>
         <param>
@@ -76,7 +79,7 @@
 <parametername>x</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>training vecors, size n * d </para>
+<para>training vectors, size n * d </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -91,6 +94,7 @@
         <definition>faiss::RandomRotationMatrix::RandomRotationMatrix</definition>
         <argsstring>()</argsstring>
         <name>RandomRotationMatrix</name>
+        <qualifiedname>faiss::RandomRotationMatrix::RandomRotationMatrix</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -104,9 +108,10 @@
         <definition>void faiss::LinearTransform::apply_noalloc</definition>
         <argsstring>(idx_t n, const float *x, float *xt) const override</argsstring>
         <name>apply_noalloc</name>
+        <qualifiedname>faiss::LinearTransform::apply_noalloc</qualifiedname>
         <reimplements refid="structfaiss_1_1VectorTransform_1a90f1a218c224c049f1bd8b77a78d6aa0">apply_noalloc</reimplements>
         <param>
-          <type><ref refid="namespacefaiss_1ad63e84aa82f5bb0405ed924d58b20e2e" kindref="member">idx_t</ref></type>
+          <type><ref refid="namespacefaiss_1ad95f6ecce1dcddede15df19a5b17adf6" kindref="member">idx_t</ref></type>
           <declname>n</declname>
         </param>
         <param>
@@ -131,8 +136,9 @@
         <definition>void faiss::LinearTransform::transform_transpose</definition>
         <argsstring>(idx_t n, const float *y, float *x) const</argsstring>
         <name>transform_transpose</name>
+        <qualifiedname>faiss::LinearTransform::transform_transpose</qualifiedname>
         <param>
-          <type><ref refid="namespacefaiss_1ad63e84aa82f5bb0405ed924d58b20e2e" kindref="member">idx_t</ref></type>
+          <type><ref refid="namespacefaiss_1ad95f6ecce1dcddede15df19a5b17adf6" kindref="member">idx_t</ref></type>
           <declname>n</declname>
         </param>
         <param>
@@ -157,9 +163,10 @@
         <definition>void faiss::LinearTransform::reverse_transform</definition>
         <argsstring>(idx_t n, const float *xt, float *x) const override</argsstring>
         <name>reverse_transform</name>
+        <qualifiedname>faiss::LinearTransform::reverse_transform</qualifiedname>
         <reimplements refid="structfaiss_1_1VectorTransform_1a0913e3b521a6d34f523c291508e82adb">reverse_transform</reimplements>
         <param>
-          <type><ref refid="namespacefaiss_1ad63e84aa82f5bb0405ed924d58b20e2e" kindref="member">idx_t</ref></type>
+          <type><ref refid="namespacefaiss_1ad95f6ecce1dcddede15df19a5b17adf6" kindref="member">idx_t</ref></type>
           <declname>n</declname>
         </param>
         <param>
@@ -184,6 +191,7 @@
         <definition>void faiss::LinearTransform::set_is_orthonormal</definition>
         <argsstring>()</argsstring>
         <name>set_is_orthonormal</name>
+        <qualifiedname>faiss::LinearTransform::set_is_orthonormal</qualifiedname>
         <briefdescription>
 <para>compute A^T * A to set the is_orthonormal flag </para>
         </briefdescription>
@@ -198,6 +206,7 @@
         <definition>void faiss::LinearTransform::print_if_verbose</definition>
         <argsstring>(const char *name, const std::vector&lt; double &gt; &amp;mat, int n, int d) const</argsstring>
         <name>print_if_verbose</name>
+        <qualifiedname>faiss::LinearTransform::print_if_verbose</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>name</declname>
@@ -227,6 +236,7 @@
         <definition>void faiss::LinearTransform::check_identical</definition>
         <argsstring>(const VectorTransform &amp;other) const override</argsstring>
         <name>check_identical</name>
+        <qualifiedname>faiss::LinearTransform::check_identical</qualifiedname>
         <reimplements refid="structfaiss_1_1VectorTransform_1ab6ac3b3be9e794a5eaa6b122709b4f99">check_identical</reimplements>
         <param>
           <type>const <ref refid="structfaiss_1_1VectorTransform" kindref="compound">VectorTransform</ref> &amp;</type>
@@ -240,13 +250,14 @@
         </inbodydescription>
         <location file="faiss/VectorTransform.h" line="109" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="structfaiss_1_1VectorTransform_1af7ea75906fb689ec667d2e685043c28a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structfaiss_1_1VectorTransform_1a99fb80aeff049dc92300d2ed79d30883" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>float *</type>
-        <definition>float* faiss::VectorTransform::apply</definition>
+        <definition>float * faiss::VectorTransform::apply</definition>
         <argsstring>(idx_t n, const float *x) const</argsstring>
         <name>apply</name>
+        <qualifiedname>faiss::VectorTransform::apply</qualifiedname>
         <param>
-          <type><ref refid="namespacefaiss_1ad63e84aa82f5bb0405ed924d58b20e2e" kindref="member">idx_t</ref></type>
+          <type><ref refid="namespacefaiss_1ad95f6ecce1dcddede15df19a5b17adf6" kindref="member">idx_t</ref></type>
           <declname>n</declname>
         </param>
         <param>
@@ -281,13 +292,14 @@
         </inbodydescription>
         <location file="faiss/VectorTransform.h" line="49" column="11"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-attrib">
+    </sectiondef>
+    <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structfaiss_1_1LinearTransform_1a322401ba80cb96ac1e7846401f2bef24" prot="public" static="no" mutable="no">
         <type>bool</type>
         <definition>bool faiss::LinearTransform::have_bias</definition>
         <argsstring></argsstring>
         <name>have_bias</name>
+        <qualifiedname>faiss::LinearTransform::have_bias</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -301,6 +313,7 @@
         <definition>bool faiss::LinearTransform::is_orthonormal</definition>
         <argsstring></argsstring>
         <name>is_orthonormal</name>
+        <qualifiedname>faiss::LinearTransform::is_orthonormal</qualifiedname>
         <briefdescription>
 <para>! whether to use the bias term </para>
         </briefdescription>
@@ -316,6 +329,7 @@
         <definition>std::vector&lt;float&gt; faiss::LinearTransform::A</definition>
         <argsstring></argsstring>
         <name>A</name>
+        <qualifiedname>faiss::LinearTransform::A</qualifiedname>
         <briefdescription>
 <para>Transformation matrix, size d_out * d_in. </para>
         </briefdescription>
@@ -330,6 +344,7 @@
         <definition>std::vector&lt;float&gt; faiss::LinearTransform::b</definition>
         <argsstring></argsstring>
         <name>b</name>
+        <qualifiedname>faiss::LinearTransform::b</qualifiedname>
         <briefdescription>
 <para>bias vector, size d_out </para>
         </briefdescription>
@@ -344,6 +359,7 @@
         <definition>bool faiss::LinearTransform::verbose</definition>
         <argsstring></argsstring>
         <name>verbose</name>
+        <qualifiedname>faiss::LinearTransform::verbose</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -357,6 +373,7 @@
         <definition>int faiss::VectorTransform::d_in</definition>
         <argsstring></argsstring>
         <name>d_in</name>
+        <qualifiedname>faiss::VectorTransform::d_in</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -370,6 +387,7 @@
         <definition>int faiss::VectorTransform::d_out</definition>
         <argsstring></argsstring>
         <name>d_out</name>
+        <qualifiedname>faiss::VectorTransform::d_out</qualifiedname>
         <briefdescription>
 <para>! input dimension </para>
         </briefdescription>
@@ -384,6 +402,7 @@
         <definition>bool faiss::VectorTransform::is_trained</definition>
         <argsstring></argsstring>
         <name>is_trained</name>
+        <qualifiedname>faiss::VectorTransform::is_trained</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -393,7 +412,7 @@
         </inbodydescription>
         <location file="faiss/VectorTransform.h" line="34" column="10" bodyfile="faiss/VectorTransform.h" bodystart="34" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
 <para>Randomly rotate a set of vectors. </para>
     </briefdescription>
@@ -406,15 +425,15 @@
         <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3">
-        <label>faiss::VectorTransform</label>
-        <link refid="structfaiss_1_1VectorTransform"/>
-      </node>
       <node id="1">
         <label>faiss::RandomRotationMatrix</label>
         <link refid="structfaiss_1_1RandomRotationMatrix"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="3">
+        <label>faiss::VectorTransform</label>
+        <link refid="structfaiss_1_1VectorTransform"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
@@ -424,21 +443,21 @@
         <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3">
-        <label>faiss::VectorTransform</label>
-        <link refid="structfaiss_1_1VectorTransform"/>
-      </node>
       <node id="1">
         <label>faiss::RandomRotationMatrix</label>
         <link refid="structfaiss_1_1RandomRotationMatrix"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="3">
+        <label>faiss::VectorTransform</label>
+        <link refid="structfaiss_1_1VectorTransform"/>
+      </node>
     </collaborationgraph>
     <location file="faiss/VectorTransform.h" line="115" column="1" bodyfile="faiss/VectorTransform.h" bodystart="115" bodyend="127"/>
     <listofallmembers>
       <member refid="structfaiss_1_1LinearTransform_1aa40e156ef57fe206cd5f3a58ec0660da" prot="public" virt="non-virtual"><scope>faiss::RandomRotationMatrix</scope><name>A</name></member>
-      <member refid="structfaiss_1_1VectorTransform_1af7ea75906fb689ec667d2e685043c28a" prot="public" virt="non-virtual"><scope>faiss::RandomRotationMatrix</scope><name>apply</name></member>
+      <member refid="structfaiss_1_1VectorTransform_1a99fb80aeff049dc92300d2ed79d30883" prot="public" virt="non-virtual"><scope>faiss::RandomRotationMatrix</scope><name>apply</name></member>
       <member refid="structfaiss_1_1LinearTransform_1aefb0ae9416652e408a96604f18a78d7d" prot="public" virt="virtual"><scope>faiss::RandomRotationMatrix</scope><name>apply_noalloc</name></member>
       <member refid="structfaiss_1_1LinearTransform_1ab0383f690aeb823876e9143febad1a87" prot="public" virt="non-virtual"><scope>faiss::RandomRotationMatrix</scope><name>b</name></member>
       <member refid="structfaiss_1_1LinearTransform_1a3ce4b5a2f726620afa5492069924b506" prot="public" virt="virtual"><scope>faiss::RandomRotationMatrix</scope><name>check_identical</name></member>
@@ -448,15 +467,15 @@
       <member refid="structfaiss_1_1RandomRotationMatrix_1a35d70d2b2e01b10ac041002e8851d5ce" prot="public" virt="non-virtual"><scope>faiss::RandomRotationMatrix</scope><name>init</name></member>
       <member refid="structfaiss_1_1LinearTransform_1a8a67a0178eab513cf87545f5d12d9569" prot="public" virt="non-virtual"><scope>faiss::RandomRotationMatrix</scope><name>is_orthonormal</name></member>
       <member refid="structfaiss_1_1VectorTransform_1ab511f1ddf608c00204555881ca28cb02" prot="public" virt="non-virtual"><scope>faiss::RandomRotationMatrix</scope><name>is_trained</name></member>
-      <member refid="structfaiss_1_1LinearTransform_1a7bf766de1abac428d18b8817208fcab0" prot="public" virt="non-virtual"><scope>faiss::RandomRotationMatrix</scope><name>LinearTransform</name></member>
+      <member refid="structfaiss_1_1LinearTransform_1a831cb91657f004b6891f98727c8b612b" prot="public" virt="non-virtual"><scope>faiss::RandomRotationMatrix</scope><name>LinearTransform</name></member>
       <member refid="structfaiss_1_1LinearTransform_1aeca6faf0c5beb67a66b7a22182422bc5" prot="public" virt="non-virtual"><scope>faiss::RandomRotationMatrix</scope><name>print_if_verbose</name></member>
-      <member refid="structfaiss_1_1RandomRotationMatrix_1a64e406c8f73c7692bcf7d97b27305fc6" prot="public" virt="non-virtual"><scope>faiss::RandomRotationMatrix</scope><name>RandomRotationMatrix</name></member>
+      <member refid="structfaiss_1_1RandomRotationMatrix_1a8efd0ee4dda65839747a67f723e6a567" prot="public" virt="non-virtual"><scope>faiss::RandomRotationMatrix</scope><name>RandomRotationMatrix</name></member>
       <member refid="structfaiss_1_1RandomRotationMatrix_1a98da7196e79373717fba4efb6b189781" prot="public" virt="non-virtual"><scope>faiss::RandomRotationMatrix</scope><name>RandomRotationMatrix</name></member>
       <member refid="structfaiss_1_1LinearTransform_1aabcea47432734c860fdf6fcc3a998563" prot="public" virt="virtual"><scope>faiss::RandomRotationMatrix</scope><name>reverse_transform</name></member>
       <member refid="structfaiss_1_1LinearTransform_1a1f75b8a58b9f452eb08fd8e54c134fe0" prot="public" virt="non-virtual"><scope>faiss::RandomRotationMatrix</scope><name>set_is_orthonormal</name></member>
       <member refid="structfaiss_1_1RandomRotationMatrix_1a8d7cd3057072bc2db0527ae4ac84b181" prot="public" virt="virtual"><scope>faiss::RandomRotationMatrix</scope><name>train</name></member>
       <member refid="structfaiss_1_1LinearTransform_1a29af2cf35a13b538eb327aa64b07e474" prot="public" virt="non-virtual"><scope>faiss::RandomRotationMatrix</scope><name>transform_transpose</name></member>
-      <member refid="structfaiss_1_1VectorTransform_1a137f48bab695736f0b1d79a50cddc858" prot="public" virt="non-virtual"><scope>faiss::RandomRotationMatrix</scope><name>VectorTransform</name></member>
+      <member refid="structfaiss_1_1VectorTransform_1a6af0c21e5b727f2202ab2e2fedea5034" prot="public" virt="non-virtual"><scope>faiss::RandomRotationMatrix</scope><name>VectorTransform</name></member>
       <member refid="structfaiss_1_1LinearTransform_1ae351ccd1155b71ac9d2fbd8d11b7082a" prot="public" virt="non-virtual"><scope>faiss::RandomRotationMatrix</scope><name>verbose</name></member>
       <member refid="structfaiss_1_1LinearTransform_1a87a85f77d0b49d85f8d2d181b7835a04" prot="public" virt="non-virtual"><scope>faiss::RandomRotationMatrix</scope><name>~LinearTransform</name></member>
       <member refid="structfaiss_1_1VectorTransform_1a6e003e61f6f88afb18e65f1493b904a8" prot="public" virt="virtual"><scope>faiss::RandomRotationMatrix</scope><name>~VectorTransform</name></member>

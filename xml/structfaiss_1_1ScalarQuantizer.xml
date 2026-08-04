@@ -1,15 +1,17 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="structfaiss_1_1ScalarQuantizer" kind="struct" language="C++" prot="public">
     <compoundname>faiss::ScalarQuantizer</compoundname>
     <basecompoundref refid="structfaiss_1_1Quantizer" prot="public" virt="non-virtual">faiss::Quantizer</basecompoundref>
     <includes refid="ScalarQuantizer_8h" local="no">ScalarQuantizer.h</includes>
     <innerclass refid="structfaiss_1_1ScalarQuantizer_1_1SQDistanceComputer" prot="public">faiss::ScalarQuantizer::SQDistanceComputer</innerclass>
     <innerclass refid="structfaiss_1_1ScalarQuantizer_1_1SQuantizer" prot="public">faiss::ScalarQuantizer::SQuantizer</innerclass>
-      <sectiondef kind="public-type">
+    <innerclass refid="structfaiss_1_1ScalarQuantizer_1_1TurboQuantRefine" prot="public">faiss::ScalarQuantizer::TurboQuantRefine</innerclass>
+    <sectiondef kind="public-type">
       <memberdef kind="enum" id="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952e" prot="public" static="no" strong="no">
         <type></type>
         <name>QuantizerType</name>
+        <qualifiedname>faiss::ScalarQuantizer::QuantizerType</qualifiedname>
         <enumvalue id="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea1650389e3efa052ff60177d502328a2c" prot="public">
           <name>QT_8bit</name>
           <briefdescription>
@@ -79,17 +81,169 @@
 <para>fast indexing of signed int8s ranging from [-128 to 127] </para>
           </detaileddescription>
         </enumvalue>
+        <enumvalue id="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea0a3662a1beaeae6bb52895f4ea229399" prot="public">
+          <name>QT_0bit</name>
+          <briefdescription>
+<para>0 bits per component, centroid-only distance (for IVF) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea0ba6b499883c48ad063ff627d4d98099" prot="public">
+          <name>QT_1bit_tqmse</name>
+          <briefdescription>
+<para>TurboQuant MSE-optimized, 1 bit per component. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea97c627e4a1c4de701476e62cefa55c81" prot="public">
+          <name>QT_2bit_tqmse</name>
+          <briefdescription>
+<para>TurboQuant MSE-optimized, 2 bits per component. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952eaded304f706a74b53c6eea653069d8f0a" prot="public">
+          <name>QT_3bit_tqmse</name>
+          <briefdescription>
+<para>TurboQuant MSE-optimized, 3 bits per component. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ead1c9451e794b77d542dbba16726c5ad2" prot="public">
+          <name>QT_4bit_tqmse</name>
+          <briefdescription>
+<para>TurboQuant MSE-optimized, 4 bits per component. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea286fea768bd9b4cdfc5fbbe769ec0fb6" prot="public">
+          <name>QT_8bit_tqmse</name>
+          <briefdescription>
+<para>TurboQuant MSE-optimized, 8 bits per component. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea99899777c135591fa746d49bcfee2b87" prot="public">
+          <name>QT_2bit_tq</name>
+          <briefdescription>
+<para>Full TurboQuant (1-bit MSE + 1-bit QJL + factors) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea77b972e86a8c25b5f86db7d7643b0bfb" prot="public">
+          <name>QT_3bit_tq</name>
+          <briefdescription>
+<para>Full TurboQuant (2-bit MSE + 1-bit QJL + factors) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea802baf4f764754fb8d90d0375664ebcd" prot="public">
+          <name>QT_4bit_tq</name>
+          <briefdescription>
+<para>Full TurboQuant (3-bit MSE + 1-bit QJL + factors) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea9bc1f041bf908d8f78d98bf82cafb308" prot="public">
+          <name>QT_5bit_tq</name>
+          <briefdescription>
+<para>Full TurboQuant (4-bit MSE + 1-bit QJL + factors) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea30c8433de3afe2244de0b174b6f3b1ac" prot="public">
+          <name>QT_1bit_eden</name>
+          <briefdescription>
+<para>EDEN Lloyd-Max scalar code, 1 bit per component. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea7a06989d1d5bbc81a5213b5f1dc8f12a" prot="public">
+          <name>QT_2bit_eden</name>
+          <briefdescription>
+<para>EDEN Lloyd-Max scalar code, 2 bits per component. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952eacacdb6afcbf819a5494991b5cf894ee3" prot="public">
+          <name>QT_3bit_eden</name>
+          <briefdescription>
+<para>EDEN Lloyd-Max scalar code, 3 bits per component. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea3789e0b22bcaf55f82cd5808aa1356c3" prot="public">
+          <name>QT_4bit_eden</name>
+          <briefdescription>
+<para>EDEN Lloyd-Max scalar code, 4 bits per component. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea1229157be7cb61913eeb704877a4704f" prot="public">
+          <name>QT_5bit_eden</name>
+          <briefdescription>
+<para>EDEN Lloyd-Max scalar code, 5 bits per component. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea10225fc05765b4bcfb08f3f617c22635" prot="public">
+          <name>QT_6bit_eden</name>
+          <briefdescription>
+<para>EDEN Lloyd-Max scalar code, 6 bits per component. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea1a2d4cc9b9d334b965d20420a5388de7" prot="public">
+          <name>QT_7bit_eden</name>
+          <briefdescription>
+<para>EDEN Lloyd-Max scalar code, 7 bits per component. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea4d4436bb4487fdfc31485581a8bb164b" prot="public">
+          <name>QT_8bit_eden</name>
+          <briefdescription>
+<para>EDEN Lloyd-Max scalar code, 8 bits per component. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea078b633a7a11d97a8a140a56a0648439" prot="public">
+          <name>QT_count</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="faiss/impl/ScalarQuantizer.h" line="27" column="5" bodyfile="faiss/impl/ScalarQuantizer.h" bodystart="27" bodyend="38"/>
+        <location file="faiss/impl/ScalarQuantizer.h" line="27" column="5" bodyfile="faiss/impl/ScalarQuantizer.h" bodystart="27" bodyend="57"/>
       </memberdef>
       <memberdef kind="enum" id="structfaiss_1_1ScalarQuantizer_1a867ad0000e4ccfd40bbb1e01e7882d06" prot="public" static="no" strong="no">
         <type></type>
         <name>RangeStat</name>
+        <qualifiedname>faiss::ScalarQuantizer::RangeStat</qualifiedname>
         <enumvalue id="structfaiss_1_1ScalarQuantizer_1a867ad0000e4ccfd40bbb1e01e7882d06aa52f2f14616c61c04baf6323d43588fd" prot="public">
           <name>RS_minmax</name>
           <briefdescription>
@@ -125,19 +279,20 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>The uniform encoder can estimate the range of representable values of the unform encoder using different statistics. Here rs = rangestat_arg </para>
+<para>The uniform encoder can estimate the range of representable values of the uniform encoder using different statistics. Here rs = rangestat_arg </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="faiss/impl/ScalarQuantizer.h" line="47" column="5" bodyfile="faiss/impl/ScalarQuantizer.h" bodystart="47" bodyend="52"/>
+        <location file="faiss/impl/ScalarQuantizer.h" line="66" column="5" bodyfile="faiss/impl/ScalarQuantizer.h" bodystart="66" bodyend="71"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-attrib">
+    </sectiondef>
+    <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structfaiss_1_1ScalarQuantizer_1a2696491a09e0ad3bbf48506592fb69de" prot="public" static="no" mutable="no">
         <type><ref refid="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952e" kindref="member">QuantizerType</ref></type>
         <definition>QuantizerType faiss::ScalarQuantizer::qtype</definition>
         <argsstring></argsstring>
         <name>qtype</name>
+        <qualifiedname>faiss::ScalarQuantizer::qtype</qualifiedname>
         <initializer>= <ref refid="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea1650389e3efa052ff60177d502328a2c" kindref="member">QT_8bit</ref></initializer>
         <briefdescription>
         </briefdescription>
@@ -145,13 +300,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="faiss/impl/ScalarQuantizer.h" line="40" column="19" bodyfile="faiss/impl/ScalarQuantizer.h" bodystart="40" bodyend="-1"/>
+        <location file="faiss/impl/ScalarQuantizer.h" line="59" column="19" bodyfile="faiss/impl/ScalarQuantizer.h" bodystart="59" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structfaiss_1_1ScalarQuantizer_1aea7d3bd87a6c82292aed03fcb7e5e265" prot="public" static="no" mutable="no">
         <type><ref refid="structfaiss_1_1ScalarQuantizer_1a867ad0000e4ccfd40bbb1e01e7882d06" kindref="member">RangeStat</ref></type>
         <definition>RangeStat faiss::ScalarQuantizer::rangestat</definition>
         <argsstring></argsstring>
         <name>rangestat</name>
+        <qualifiedname>faiss::ScalarQuantizer::rangestat</qualifiedname>
         <initializer>= <ref refid="structfaiss_1_1ScalarQuantizer_1a867ad0000e4ccfd40bbb1e01e7882d06aa52f2f14616c61c04baf6323d43588fd" kindref="member">RS_minmax</ref></initializer>
         <briefdescription>
         </briefdescription>
@@ -159,13 +315,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="faiss/impl/ScalarQuantizer.h" line="54" column="15" bodyfile="faiss/impl/ScalarQuantizer.h" bodystart="54" bodyend="-1"/>
+        <location file="faiss/impl/ScalarQuantizer.h" line="73" column="15" bodyfile="faiss/impl/ScalarQuantizer.h" bodystart="73" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structfaiss_1_1ScalarQuantizer_1aacac5a2655b0dbf5d828dde8ab236b48" prot="public" static="no" mutable="no">
         <type>float</type>
         <definition>float faiss::ScalarQuantizer::rangestat_arg</definition>
         <argsstring></argsstring>
         <name>rangestat_arg</name>
+        <qualifiedname>faiss::ScalarQuantizer::rangestat_arg</qualifiedname>
         <initializer>= 0</initializer>
         <briefdescription>
         </briefdescription>
@@ -173,13 +330,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="faiss/impl/ScalarQuantizer.h" line="55" column="11" bodyfile="faiss/impl/ScalarQuantizer.h" bodystart="55" bodyend="-1"/>
+        <location file="faiss/impl/ScalarQuantizer.h" line="74" column="11" bodyfile="faiss/impl/ScalarQuantizer.h" bodystart="74" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structfaiss_1_1ScalarQuantizer_1a8103b43429df7340ed495681ceff45b3" prot="public" static="no" mutable="no">
         <type>size_t</type>
         <definition>size_t faiss::ScalarQuantizer::bits</definition>
         <argsstring></argsstring>
         <name>bits</name>
+        <qualifiedname>faiss::ScalarQuantizer::bits</qualifiedname>
         <initializer>= 0</initializer>
         <briefdescription>
 <para>bits per scalar code </para>
@@ -188,13 +346,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="faiss/impl/ScalarQuantizer.h" line="58" column="12" bodyfile="faiss/impl/ScalarQuantizer.h" bodystart="58" bodyend="-1"/>
+        <location file="faiss/impl/ScalarQuantizer.h" line="77" column="12" bodyfile="faiss/impl/ScalarQuantizer.h" bodystart="77" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structfaiss_1_1ScalarQuantizer_1a30b411b10780a74079bbbfaff678c86f" prot="public" static="no" mutable="no">
         <type>std::vector&lt; float &gt;</type>
         <definition>std::vector&lt;float&gt; faiss::ScalarQuantizer::trained</definition>
         <argsstring></argsstring>
         <name>trained</name>
+        <qualifiedname>faiss::ScalarQuantizer::trained</qualifiedname>
         <briefdescription>
 <para>trained values (including the range) </para>
         </briefdescription>
@@ -202,13 +361,28 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="faiss/impl/ScalarQuantizer.h" line="61" column="17" bodyfile="faiss/impl/ScalarQuantizer.h" bodystart="61" bodyend="-1"/>
+        <location file="faiss/impl/ScalarQuantizer.h" line="80" column="17" bodyfile="faiss/impl/ScalarQuantizer.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfaiss_1_1ScalarQuantizer_1a65417d7a772301695f5010189fda2837" prot="public" static="no" mutable="no">
+        <type><ref refid="structfaiss_1_1ScalarQuantizer_1_1TurboQuantRefine" kindref="compound">TurboQuantRefine</ref></type>
+        <definition>TurboQuantRefine faiss::ScalarQuantizer::turboq_refine</definition>
+        <argsstring></argsstring>
+        <name>turboq_refine</name>
+        <qualifiedname>faiss::ScalarQuantizer::turboq_refine</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="faiss/impl/ScalarQuantizer.h" line="202" column="22" bodyfile="faiss/impl/ScalarQuantizer.h" bodystart="202" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structfaiss_1_1Quantizer_1a416da1bab43fefa36563210a86298a75" prot="public" static="no" mutable="no">
         <type>size_t</type>
         <definition>size_t faiss::Quantizer::d</definition>
         <argsstring></argsstring>
         <name>d</name>
+        <qualifiedname>faiss::Quantizer::d</qualifiedname>
         <briefdescription>
 <para>size of the input vectors </para>
         </briefdescription>
@@ -223,6 +397,7 @@
         <definition>size_t faiss::Quantizer::code_size</definition>
         <argsstring></argsstring>
         <name>code_size</name>
+        <qualifiedname>faiss::Quantizer::code_size</qualifiedname>
         <briefdescription>
 <para>bytes per indexed vector </para>
         </briefdescription>
@@ -232,20 +407,21 @@
         </inbodydescription>
         <location file="faiss/impl/Quantizer.h" line="17" column="12" bodyfile="faiss/impl/Quantizer.h" bodystart="17" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
-      <memberdef kind="function" id="structfaiss_1_1ScalarQuantizer_1aa49b6ffd5a6b8a0029bc85ed5fa9504c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structfaiss_1_1ScalarQuantizer_1ae6eac087395ad056b8be3381b0ab1dc8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>faiss::ScalarQuantizer::ScalarQuantizer</definition>
-        <argsstring>(size_t d, QuantizerType qtype)</argsstring>
+        <argsstring>(size_t d_in, QuantizerType qtype_in)</argsstring>
         <name>ScalarQuantizer</name>
+        <qualifiedname>faiss::ScalarQuantizer::ScalarQuantizer</qualifiedname>
         <param>
           <type>size_t</type>
-          <declname>d</declname>
+          <declname>d_in</declname>
         </param>
         <param>
           <type><ref refid="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952e" kindref="member">QuantizerType</ref></type>
-          <declname>qtype</declname>
+          <declname>qtype_in</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -253,26 +429,28 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="faiss/impl/ScalarQuantizer.h" line="63" column="5"/>
+        <location file="faiss/impl/ScalarQuantizer.h" line="82" column="5"/>
       </memberdef>
       <memberdef kind="function" id="structfaiss_1_1ScalarQuantizer_1ab2d3ee7befea820dc8aa3d26e8177dd3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>faiss::ScalarQuantizer::ScalarQuantizer</definition>
         <argsstring>()</argsstring>
         <name>ScalarQuantizer</name>
+        <qualifiedname>faiss::ScalarQuantizer::ScalarQuantizer</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="faiss/impl/ScalarQuantizer.h" line="64" column="5"/>
+        <location file="faiss/impl/ScalarQuantizer.h" line="83" column="5"/>
       </memberdef>
       <memberdef kind="function" id="structfaiss_1_1ScalarQuantizer_1a212d0f7edac38a0790c76dd50ef5f12a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void faiss::ScalarQuantizer::set_derived_sizes</definition>
         <argsstring>()</argsstring>
         <name>set_derived_sizes</name>
+        <qualifiedname>faiss::ScalarQuantizer::set_derived_sizes</qualifiedname>
         <briefdescription>
 <para>updates internal values based on qtype and d </para>
         </briefdescription>
@@ -280,13 +458,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="faiss/impl/ScalarQuantizer.h" line="67" column="10"/>
+        <location file="faiss/impl/ScalarQuantizer.h" line="86" column="10"/>
       </memberdef>
       <memberdef kind="function" id="structfaiss_1_1ScalarQuantizer_1a7cc2c64ef7cde9e5d319378d7afd986e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
         <definition>void faiss::ScalarQuantizer::train</definition>
         <argsstring>(size_t n, const float *x) override</argsstring>
         <name>train</name>
+        <qualifiedname>faiss::ScalarQuantizer::train</qualifiedname>
         <reimplements refid="structfaiss_1_1Quantizer_1a6e97ff4cce0bb4163aa8fbe95df456c9">train</reimplements>
         <param>
           <type>size_t</type>
@@ -313,13 +492,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="faiss/impl/ScalarQuantizer.h" line="69" column="10"/>
+        <location file="faiss/impl/ScalarQuantizer.h" line="88" column="10"/>
       </memberdef>
       <memberdef kind="function" id="structfaiss_1_1ScalarQuantizer_1abfd07a93dca7826709b5d3ab7767f5da" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
         <definition>void faiss::ScalarQuantizer::compute_codes</definition>
         <argsstring>(const float *x, uint8_t *codes, size_t n) const override</argsstring>
         <name>compute_codes</name>
+        <qualifiedname>faiss::ScalarQuantizer::compute_codes</qualifiedname>
         <reimplements refid="structfaiss_1_1Quantizer_1a2590aabcafa9fb9ae05587d334fd8205">compute_codes</reimplements>
         <param>
           <type>const float *</type>
@@ -358,13 +538,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="faiss/impl/ScalarQuantizer.h" line="76" column="10"/>
+        <location file="faiss/impl/ScalarQuantizer.h" line="95" column="10"/>
       </memberdef>
       <memberdef kind="function" id="structfaiss_1_1ScalarQuantizer_1af605deafd19bab5777d29e035ed5e510" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
         <definition>void faiss::ScalarQuantizer::decode</definition>
         <argsstring>(const uint8_t *code, float *x, size_t n) const override</argsstring>
         <name>decode</name>
+        <qualifiedname>faiss::ScalarQuantizer::decode</qualifiedname>
         <reimplements refid="structfaiss_1_1Quantizer_1a71b20a9a5f98f9e8889bb22cfb7f9fac">decode</reimplements>
         <param>
           <type>const uint8_t *</type>
@@ -403,26 +584,28 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="faiss/impl/ScalarQuantizer.h" line="83" column="10"/>
+        <location file="faiss/impl/ScalarQuantizer.h" line="102" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="structfaiss_1_1ScalarQuantizer_1a791bd1b0092d049b13f69a5db8d04500" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structfaiss_1_1ScalarQuantizer_1a8d50f5f8392d4f877c63a7eee0b30059" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structfaiss_1_1ScalarQuantizer_1_1SQuantizer" kindref="compound">SQuantizer</ref> *</type>
-        <definition>SQuantizer* faiss::ScalarQuantizer::select_quantizer</definition>
+        <definition>SQuantizer * faiss::ScalarQuantizer::select_quantizer</definition>
         <argsstring>() const</argsstring>
         <name>select_quantizer</name>
+        <qualifiedname>faiss::ScalarQuantizer::select_quantizer</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="faiss/impl/ScalarQuantizer.h" line="98" column="16"/>
+        <location file="faiss/impl/ScalarQuantizer.h" line="117" column="16"/>
       </memberdef>
-      <memberdef kind="function" id="structfaiss_1_1ScalarQuantizer_1ada7bcefde4ad9d2b9ad40196eb1c36dd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structfaiss_1_1ScalarQuantizer_1aa2f8e73b3bfb82bfa98849a04ef71746" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structfaiss_1_1ScalarQuantizer_1_1SQDistanceComputer" kindref="compound">SQDistanceComputer</ref> *</type>
-        <definition>SQDistanceComputer* faiss::ScalarQuantizer::get_distance_computer</definition>
+        <definition>SQDistanceComputer * faiss::ScalarQuantizer::get_distance_computer</definition>
         <argsstring>(MetricType metric=METRIC_L2) const</argsstring>
         <name>get_distance_computer</name>
+        <qualifiedname>faiss::ScalarQuantizer::get_distance_computer</qualifiedname>
         <param>
           <type><ref refid="namespacefaiss_1afd12191c638da74760ff397cf319752c" kindref="member">MetricType</ref></type>
           <declname>metric</declname>
@@ -434,13 +617,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="faiss/impl/ScalarQuantizer.h" line="112" column="24"/>
+        <location file="faiss/impl/ScalarQuantizer.h" line="204" column="24"/>
       </memberdef>
-      <memberdef kind="function" id="structfaiss_1_1ScalarQuantizer_1afa3e554b7329946a24ab8c09bb727f63" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structfaiss_1_1ScalarQuantizer_1a5290e85695dc1f45a0f80d130ace7ce8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structfaiss_1_1InvertedListScanner" kindref="compound">InvertedListScanner</ref> *</type>
-        <definition>InvertedListScanner* faiss::ScalarQuantizer::select_InvertedListScanner</definition>
+        <definition>InvertedListScanner * faiss::ScalarQuantizer::select_InvertedListScanner</definition>
         <argsstring>(MetricType mt, const Index *quantizer, bool store_pairs, const IDSelector *sel, bool by_residual=false) const</argsstring>
         <name>select_InvertedListScanner</name>
+        <qualifiedname>faiss::ScalarQuantizer::select_InvertedListScanner</qualifiedname>
         <param>
           <type><ref refid="namespacefaiss_1afd12191c638da74760ff397cf319752c" kindref="member">MetricType</ref></type>
           <declname>mt</declname>
@@ -468,72 +652,99 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="faiss/impl/ScalarQuantizer.h" line="115" column="25"/>
+        <location file="faiss/impl/ScalarQuantizer.h" line="207" column="25"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
 <para>The uniform quantizer has a range [vmin, vmax]. The range can be the same for all dimensions (uniform) or specific per dimension (default). </para>
     </detaileddescription>
     <inheritancegraph>
+      <node id="2">
+        <label>faiss::Quantizer</label>
+        <link refid="structfaiss_1_1Quantizer"/>
+      </node>
       <node id="1">
         <label>faiss::ScalarQuantizer</label>
         <link refid="structfaiss_1_1ScalarQuantizer"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-      </node>
-      <node id="2">
-        <label>faiss::Quantizer</label>
-        <link refid="structfaiss_1_1Quantizer"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
+      <node id="2">
+        <label>faiss::Quantizer</label>
+        <link refid="structfaiss_1_1Quantizer"/>
+      </node>
       <node id="1">
         <label>faiss::ScalarQuantizer</label>
         <link refid="structfaiss_1_1ScalarQuantizer"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>turboq_refine</edgelabel>
+        </childnode>
       </node>
-      <node id="2">
-        <label>faiss::Quantizer</label>
-        <link refid="structfaiss_1_1Quantizer"/>
+      <node id="3">
+        <label>faiss::ScalarQuantizer::TurboQuantRefine</label>
+        <link refid="structfaiss_1_1ScalarQuantizer_1_1TurboQuantRefine"/>
       </node>
     </collaborationgraph>
-    <location file="faiss/impl/ScalarQuantizer.h" line="26" column="1" bodyfile="faiss/impl/ScalarQuantizer.h" bodystart="26" bodyend="121"/>
+    <location file="faiss/impl/ScalarQuantizer.h" line="26" column="1" bodyfile="faiss/impl/ScalarQuantizer.h" bodystart="26" bodyend="213"/>
     <listofallmembers>
       <member refid="structfaiss_1_1ScalarQuantizer_1a8103b43429df7340ed495681ceff45b3" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>bits</name></member>
       <member refid="structfaiss_1_1Quantizer_1a25120fac0a15262b52e54391cc642850" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>code_size</name></member>
       <member refid="structfaiss_1_1ScalarQuantizer_1abfd07a93dca7826709b5d3ab7767f5da" prot="public" virt="virtual"><scope>faiss::ScalarQuantizer</scope><name>compute_codes</name></member>
       <member refid="structfaiss_1_1Quantizer_1a416da1bab43fefa36563210a86298a75" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>d</name></member>
       <member refid="structfaiss_1_1ScalarQuantizer_1af605deafd19bab5777d29e035ed5e510" prot="public" virt="virtual"><scope>faiss::ScalarQuantizer</scope><name>decode</name></member>
-      <member refid="structfaiss_1_1ScalarQuantizer_1ada7bcefde4ad9d2b9ad40196eb1c36dd" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>get_distance_computer</name></member>
+      <member refid="structfaiss_1_1ScalarQuantizer_1aa2f8e73b3bfb82bfa98849a04ef71746" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>get_distance_computer</name></member>
+      <member refid="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea0a3662a1beaeae6bb52895f4ea229399" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>QT_0bit</name></member>
+      <member refid="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea30c8433de3afe2244de0b174b6f3b1ac" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>QT_1bit_eden</name></member>
+      <member refid="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea0ba6b499883c48ad063ff627d4d98099" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>QT_1bit_tqmse</name></member>
+      <member refid="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea7a06989d1d5bbc81a5213b5f1dc8f12a" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>QT_2bit_eden</name></member>
+      <member refid="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea99899777c135591fa746d49bcfee2b87" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>QT_2bit_tq</name></member>
+      <member refid="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea97c627e4a1c4de701476e62cefa55c81" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>QT_2bit_tqmse</name></member>
+      <member refid="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952eacacdb6afcbf819a5494991b5cf894ee3" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>QT_3bit_eden</name></member>
+      <member refid="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea77b972e86a8c25b5f86db7d7643b0bfb" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>QT_3bit_tq</name></member>
+      <member refid="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952eaded304f706a74b53c6eea653069d8f0a" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>QT_3bit_tqmse</name></member>
       <member refid="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952eacd3d1bd71533a7bc52149e4b3d1db13b" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>QT_4bit</name></member>
+      <member refid="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea3789e0b22bcaf55f82cd5808aa1356c3" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>QT_4bit_eden</name></member>
+      <member refid="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea802baf4f764754fb8d90d0375664ebcd" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>QT_4bit_tq</name></member>
+      <member refid="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ead1c9451e794b77d542dbba16726c5ad2" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>QT_4bit_tqmse</name></member>
       <member refid="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ead1d9d0669dc4baabba1bf48204090adf" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>QT_4bit_uniform</name></member>
+      <member refid="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea1229157be7cb61913eeb704877a4704f" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>QT_5bit_eden</name></member>
+      <member refid="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea9bc1f041bf908d8f78d98bf82cafb308" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>QT_5bit_tq</name></member>
       <member refid="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952eaf654ce120baf92b9ac3c43592744fbf8" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>QT_6bit</name></member>
+      <member refid="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea10225fc05765b4bcfb08f3f617c22635" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>QT_6bit_eden</name></member>
+      <member refid="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea1a2d4cc9b9d334b965d20420a5388de7" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>QT_7bit_eden</name></member>
       <member refid="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea1650389e3efa052ff60177d502328a2c" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>QT_8bit</name></member>
       <member refid="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952eab03999c03af6350eaf490acd4b37c3be" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>QT_8bit_direct</name></member>
       <member refid="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952eaab5c903ada4c52a308aae478d9e40452" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>QT_8bit_direct_signed</name></member>
+      <member refid="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea4d4436bb4487fdfc31485581a8bb164b" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>QT_8bit_eden</name></member>
+      <member refid="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea286fea768bd9b4cdfc5fbbe769ec0fb6" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>QT_8bit_tqmse</name></member>
       <member refid="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea029f07a15ea64e7e73daaf9633ac429a" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>QT_8bit_uniform</name></member>
       <member refid="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952eae6cdb226519ce240694da1a4f21232cd" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>QT_bf16</name></member>
+      <member refid="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea078b633a7a11d97a8a140a56a0648439" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>QT_count</name></member>
       <member refid="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952ea128bcc572501a040ae5eddad599f5dfe" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>QT_fp16</name></member>
       <member refid="structfaiss_1_1ScalarQuantizer_1a2696491a09e0ad3bbf48506592fb69de" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>qtype</name></member>
-      <member refid="structfaiss_1_1Quantizer_1abfc52a9334f44a5251f49e75360027e2" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>Quantizer</name></member>
+      <member refid="structfaiss_1_1Quantizer_1ae7c15223f3783af9edd795af5c5e2272" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>Quantizer</name></member>
       <member refid="structfaiss_1_1ScalarQuantizer_1a1201dbd1611fa5c10782ade5d0e4952e" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>QuantizerType</name></member>
-      <member refid="structfaiss_1_1ScalarQuantizer_1aea7d3bd87a6c82292aed03fcb7e5e265" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>rangestat</name></member>
       <member refid="structfaiss_1_1ScalarQuantizer_1a867ad0000e4ccfd40bbb1e01e7882d06" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>RangeStat</name></member>
+      <member refid="structfaiss_1_1ScalarQuantizer_1aea7d3bd87a6c82292aed03fcb7e5e265" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>rangestat</name></member>
       <member refid="structfaiss_1_1ScalarQuantizer_1aacac5a2655b0dbf5d828dde8ab236b48" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>rangestat_arg</name></member>
       <member refid="structfaiss_1_1ScalarQuantizer_1a867ad0000e4ccfd40bbb1e01e7882d06afb4b9f4ee9003fa0193e6de69632f7a0" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>RS_meanstd</name></member>
       <member refid="structfaiss_1_1ScalarQuantizer_1a867ad0000e4ccfd40bbb1e01e7882d06aa52f2f14616c61c04baf6323d43588fd" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>RS_minmax</name></member>
       <member refid="structfaiss_1_1ScalarQuantizer_1a867ad0000e4ccfd40bbb1e01e7882d06ab0709ff74c1b882b64a7fdd7ca5df9a3" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>RS_optim</name></member>
       <member refid="structfaiss_1_1ScalarQuantizer_1a867ad0000e4ccfd40bbb1e01e7882d06ae41cccec3a7acbcb3a47fa63c2bfb4c8" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>RS_quantiles</name></member>
-      <member refid="structfaiss_1_1ScalarQuantizer_1aa49b6ffd5a6b8a0029bc85ed5fa9504c" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>ScalarQuantizer</name></member>
+      <member refid="structfaiss_1_1ScalarQuantizer_1ae6eac087395ad056b8be3381b0ab1dc8" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>ScalarQuantizer</name></member>
       <member refid="structfaiss_1_1ScalarQuantizer_1ab2d3ee7befea820dc8aa3d26e8177dd3" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>ScalarQuantizer</name></member>
-      <member refid="structfaiss_1_1ScalarQuantizer_1afa3e554b7329946a24ab8c09bb727f63" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>select_InvertedListScanner</name></member>
-      <member refid="structfaiss_1_1ScalarQuantizer_1a791bd1b0092d049b13f69a5db8d04500" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>select_quantizer</name></member>
+      <member refid="structfaiss_1_1ScalarQuantizer_1a5290e85695dc1f45a0f80d130ace7ce8" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>select_InvertedListScanner</name></member>
+      <member refid="structfaiss_1_1ScalarQuantizer_1a8d50f5f8392d4f877c63a7eee0b30059" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>select_quantizer</name></member>
       <member refid="structfaiss_1_1ScalarQuantizer_1a212d0f7edac38a0790c76dd50ef5f12a" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>set_derived_sizes</name></member>
       <member refid="structfaiss_1_1ScalarQuantizer_1a7cc2c64ef7cde9e5d319378d7afd986e" prot="public" virt="virtual"><scope>faiss::ScalarQuantizer</scope><name>train</name></member>
       <member refid="structfaiss_1_1ScalarQuantizer_1a30b411b10780a74079bbbfaff678c86f" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>trained</name></member>
+      <member refid="structfaiss_1_1ScalarQuantizer_1a65417d7a772301695f5010189fda2837" prot="public" virt="non-virtual"><scope>faiss::ScalarQuantizer</scope><name>turboq_refine</name></member>
       <member refid="structfaiss_1_1Quantizer_1a3983e6b49d0c28523ec650c877214ebc" prot="public" virt="virtual"><scope>faiss::ScalarQuantizer</scope><name>~Quantizer</name></member>
     </listofallmembers>
   </compounddef>

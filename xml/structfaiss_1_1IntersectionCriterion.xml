@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="structfaiss_1_1IntersectionCriterion" kind="struct" language="C++" prot="public">
     <compoundname>faiss::IntersectionCriterion</compoundname>
     <basecompoundref refid="structfaiss_1_1AutoTuneCriterion" prot="public" virt="non-virtual">faiss::AutoTuneCriterion</basecompoundref>
-      <sectiondef kind="public-attrib">
+    <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structfaiss_1_1IntersectionCriterion_1a9ccad002c0cf0272a2cc0e02d2a37384" prot="public" static="no" mutable="no">
-        <type><ref refid="namespacefaiss_1ad63e84aa82f5bb0405ed924d58b20e2e" kindref="member">idx_t</ref></type>
+        <type><ref refid="namespacefaiss_1ad95f6ecce1dcddede15df19a5b17adf6" kindref="member">idx_t</ref></type>
         <definition>idx_t faiss::IntersectionCriterion::R</definition>
         <argsstring></argsstring>
         <name>R</name>
+        <qualifiedname>faiss::IntersectionCriterion::R</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -18,10 +19,11 @@
         <location file="faiss/AutoTune.h" line="67" column="11" bodyfile="faiss/AutoTune.h" bodystart="67" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structfaiss_1_1AutoTuneCriterion_1adcfaafb3f1b3449e2cfd553f0f603a5b" prot="public" static="no" mutable="no">
-        <type><ref refid="namespacefaiss_1ad63e84aa82f5bb0405ed924d58b20e2e" kindref="member">idx_t</ref></type>
+        <type><ref refid="namespacefaiss_1ad95f6ecce1dcddede15df19a5b17adf6" kindref="member">idx_t</ref></type>
         <definition>idx_t faiss::AutoTuneCriterion::nq</definition>
         <argsstring></argsstring>
         <name>nq</name>
+        <qualifiedname>faiss::AutoTuneCriterion::nq</qualifiedname>
         <briefdescription>
 <para>nb of queries this criterion is evaluated on </para>
         </briefdescription>
@@ -32,10 +34,11 @@
         <location file="faiss/AutoTune.h" line="26" column="11" bodyfile="faiss/AutoTune.h" bodystart="26" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structfaiss_1_1AutoTuneCriterion_1a3bb11e873707a812999f8391869aafab" prot="public" static="no" mutable="no">
-        <type><ref refid="namespacefaiss_1ad63e84aa82f5bb0405ed924d58b20e2e" kindref="member">idx_t</ref></type>
+        <type><ref refid="namespacefaiss_1ad95f6ecce1dcddede15df19a5b17adf6" kindref="member">idx_t</ref></type>
         <definition>idx_t faiss::AutoTuneCriterion::nnn</definition>
         <argsstring></argsstring>
         <name>nnn</name>
+        <qualifiedname>faiss::AutoTuneCriterion::nnn</qualifiedname>
         <briefdescription>
 <para>nb of NNs that the query should request </para>
         </briefdescription>
@@ -46,10 +49,11 @@
         <location file="faiss/AutoTune.h" line="27" column="11" bodyfile="faiss/AutoTune.h" bodystart="27" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structfaiss_1_1AutoTuneCriterion_1a9b3a2242729a0873d255c1684881bbd4" prot="public" static="no" mutable="no">
-        <type><ref refid="namespacefaiss_1ad63e84aa82f5bb0405ed924d58b20e2e" kindref="member">idx_t</ref></type>
+        <type><ref refid="namespacefaiss_1ad95f6ecce1dcddede15df19a5b17adf6" kindref="member">idx_t</ref></type>
         <definition>idx_t faiss::AutoTuneCriterion::gt_nnn</definition>
         <argsstring></argsstring>
         <name>gt_nnn</name>
+        <qualifiedname>faiss::AutoTuneCriterion::gt_nnn</qualifiedname>
         <briefdescription>
 <para>nb of GT NNs required to evaluate criterion </para>
         </briefdescription>
@@ -64,6 +68,7 @@
         <definition>std::vector&lt;float&gt; faiss::AutoTuneCriterion::gt_D</definition>
         <argsstring></argsstring>
         <name>gt_D</name>
+        <qualifiedname>faiss::AutoTuneCriterion::gt_D</qualifiedname>
         <briefdescription>
 <para>Ground-truth distances (size nq * gt_nnn) </para>
         </briefdescription>
@@ -74,10 +79,11 @@
         <location file="faiss/AutoTune.h" line="30" column="17" bodyfile="faiss/AutoTune.h" bodystart="30" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structfaiss_1_1AutoTuneCriterion_1af915fc4df215e3c8d9f71ff42d526144" prot="public" static="no" mutable="no">
-        <type>std::vector&lt; <ref refid="namespacefaiss_1ad63e84aa82f5bb0405ed924d58b20e2e" kindref="member">idx_t</ref> &gt;</type>
+        <type>std::vector&lt; <ref refid="namespacefaiss_1ad95f6ecce1dcddede15df19a5b17adf6" kindref="member">idx_t</ref> &gt;</type>
         <definition>std::vector&lt;idx_t&gt; faiss::AutoTuneCriterion::gt_I</definition>
         <argsstring></argsstring>
         <name>gt_I</name>
+        <qualifiedname>faiss::AutoTuneCriterion::gt_I</qualifiedname>
         <briefdescription>
 <para>Ground-truth indexes (size nq * gt_nnn) </para>
         </briefdescription>
@@ -87,19 +93,20 @@
         </inbodydescription>
         <location file="faiss/AutoTune.h" line="31" column="17" bodyfile="faiss/AutoTune.h" bodystart="31" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="structfaiss_1_1IntersectionCriterion_1a786f743984105ff940a780fe3ba85040" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>faiss::IntersectionCriterion::IntersectionCriterion</definition>
         <argsstring>(idx_t nq, idx_t R)</argsstring>
         <name>IntersectionCriterion</name>
+        <qualifiedname>faiss::IntersectionCriterion::IntersectionCriterion</qualifiedname>
         <param>
-          <type><ref refid="namespacefaiss_1ad63e84aa82f5bb0405ed924d58b20e2e" kindref="member">idx_t</ref></type>
+          <type><ref refid="namespacefaiss_1ad95f6ecce1dcddede15df19a5b17adf6" kindref="member">idx_t</ref></type>
           <declname>nq</declname>
         </param>
         <param>
-          <type><ref refid="namespacefaiss_1ad63e84aa82f5bb0405ed924d58b20e2e" kindref="member">idx_t</ref></type>
+          <type><ref refid="namespacefaiss_1ad95f6ecce1dcddede15df19a5b17adf6" kindref="member">idx_t</ref></type>
           <declname>R</declname>
         </param>
         <briefdescription>
@@ -115,13 +122,14 @@
         <definition>double faiss::IntersectionCriterion::evaluate</definition>
         <argsstring>(const float *D, const idx_t *I) const override</argsstring>
         <name>evaluate</name>
+        <qualifiedname>faiss::IntersectionCriterion::evaluate</qualifiedname>
         <reimplements refid="structfaiss_1_1AutoTuneCriterion_1a9084449e216b331c5f753a10c6de6a47">evaluate</reimplements>
         <param>
           <type>const float *</type>
           <declname>D</declname>
         </param>
         <param>
-          <type>const <ref refid="namespacefaiss_1ad63e84aa82f5bb0405ed924d58b20e2e" kindref="member">idx_t</ref> *</type>
+          <type>const <ref refid="namespacefaiss_1ad95f6ecce1dcddede15df19a5b17adf6" kindref="member">idx_t</ref> *</type>
           <declname>I</declname>
         </param>
         <briefdescription>
@@ -158,6 +166,7 @@
         <definition>faiss::IntersectionCriterion::~IntersectionCriterion</definition>
         <argsstring>() override</argsstring>
         <name>~IntersectionCriterion</name>
+        <qualifiedname>faiss::IntersectionCriterion::~IntersectionCriterion</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -171,6 +180,7 @@
         <definition>void faiss::AutoTuneCriterion::set_groundtruth</definition>
         <argsstring>(int gt_nnn, const float *gt_D_in, const idx_t *gt_I_in)</argsstring>
         <name>set_groundtruth</name>
+        <qualifiedname>faiss::AutoTuneCriterion::set_groundtruth</qualifiedname>
         <param>
           <type>int</type>
           <declname>gt_nnn</declname>
@@ -180,13 +190,13 @@
           <declname>gt_D_in</declname>
         </param>
         <param>
-          <type>const <ref refid="namespacefaiss_1ad63e84aa82f5bb0405ed924d58b20e2e" kindref="member">idx_t</ref> *</type>
+          <type>const <ref refid="namespacefaiss_1ad95f6ecce1dcddede15df19a5b17adf6" kindref="member">idx_t</ref> *</type>
           <declname>gt_I_in</declname>
         </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Intitializes the gt_D and gt_I vectors. Must be called before evaluating</para>
+<para>Initializes the gt_D and gt_I vectors. Must be called before evaluating</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>gt_D_in</parametername>
@@ -210,33 +220,33 @@
         </inbodydescription>
         <location file="faiss/AutoTune.h" line="40" column="10"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
+      <node id="2">
+        <label>faiss::AutoTuneCriterion</label>
+        <link refid="structfaiss_1_1AutoTuneCriterion"/>
+      </node>
       <node id="1">
         <label>faiss::IntersectionCriterion</label>
         <link refid="structfaiss_1_1IntersectionCriterion"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-      </node>
-      <node id="2">
-        <label>faiss::AutoTuneCriterion</label>
-        <link refid="structfaiss_1_1AutoTuneCriterion"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
+      <node id="2">
+        <label>faiss::AutoTuneCriterion</label>
+        <link refid="structfaiss_1_1AutoTuneCriterion"/>
+      </node>
       <node id="1">
         <label>faiss::IntersectionCriterion</label>
         <link refid="structfaiss_1_1IntersectionCriterion"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-      </node>
-      <node id="2">
-        <label>faiss::AutoTuneCriterion</label>
-        <link refid="structfaiss_1_1AutoTuneCriterion"/>
       </node>
     </collaborationgraph>
     <location file="faiss/AutoTune.h" line="66" column="1" bodyfile="faiss/AutoTune.h" bodystart="66" bodyend="74"/>
